@@ -1,5 +1,9 @@
 # Padrões de QA
 
+Os testes de QA deste time são **manuais**. Cada caso de teste é executado à mão no
+navegador, e o resultado é registrado com evidência (print, vídeo ou arquivo gerado).
+Os testes unitários automatizados são responsabilidade do desenvolvedor.
+
 ## Identificadores
 
 | Item | Formato | Exemplo |

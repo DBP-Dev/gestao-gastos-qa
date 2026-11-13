@@ -5,6 +5,18 @@ simulado. O aplicativo é real e funciona; a empresa (**Casa Clara Tecnologia**)
 pessoas do time são fictícias. As histórias, as entregas do desenvolvedor e os bugs seguem
 o fluxo de uma empresa de verdade, sprint a sprint.
 
+## Foco: testes manuais
+
+O meu objetivo aqui são os **testes manuais**: entender as regras de negócio, planejar,
+escrever e executar casos de teste, explorar o aplicativo, encontrar e reportar bugs com
+evidências, testar de novo as correções e dar o parecer de cada versão.
+
+Técnicas usadas: partição de equivalência, análise de valor-limite, tabela de decisão,
+teste exploratório, teste de regressão e testes de compatibilidade entre navegadores.
+
+Os testes unitários automatizados que aparecem no código (`npm test`) são do
+desenvolvedor, não fazem parte do meu trabalho de QA.
+
 ## O que você encontra aqui
 
 | Onde | O quê |

@@ -6,6 +6,7 @@
 | Versão alvo | **1.1.0** |
 | Objetivo | Quem tem muitas contas no mês consegue encontrar, filtrar e levar as contas para uma planilha |
 | Ambiente de teste | branch `develop` |
+| Tipo de teste do QA | Manual (funcional, valor-limite, exploratório, regressão e navegadores) |
 
 ## Histórias
 

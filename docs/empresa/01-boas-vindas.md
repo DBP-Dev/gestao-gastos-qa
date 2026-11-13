@@ -9,7 +9,11 @@ Olá, Diego! Seja bem-vindo ao time. 👋
 A Casa Clara é uma startup pequena que faz o **Gestão de Gastos**, um aplicativo web para
 organizar as contas do mês — de quem mora sozinho, de casais e de famílias que dividem
 despesas. A versão **1.0.0** já está em produção, e você entra como o primeiro **Analista
-de QA** do time.
+de QA** do time, com foco em **testes manuais**.
+
+> Sua função é validar o produto como um usuário exigente faria: lendo as regras,
+> planejando e executando os testes à mão e documentando tudo. A automação fica com o
+> desenvolvedor, que escreve os testes unitários do código.
 
 ## O time
 
@@ -19,7 +23,7 @@ de QA** do time.
 | Rafael Nogueira | Tech Lead | ambiente, arquitetura, dúvidas técnicas, aprovação das correções |
 | Claude | Desenvolvedor | entregas da sprint, correção dos bugs, testes unitários |
 | Lia Campos | Designer | textos da tela, layout, acessibilidade |
-| **Diego** | **Analista de QA** | **qualidade de tudo o que vai para produção** |
+| **Diego** | **Analista de QA (testes manuais)** | **qualidade de tudo o que vai para produção** |
 
 ## O que esperamos de você
 
