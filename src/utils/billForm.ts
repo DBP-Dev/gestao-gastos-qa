@@ -2,6 +2,9 @@ import type { Bill, BillShare, Member } from '../types'
 import { centsToInput, formatBRL, parseMoneyInput, splitEvenly } from './money'
 import { validateInstallmentCount } from './series'
 
+/** US-104: maior valor aceito para uma conta no formulário (R$ 1.000.000,00). */
+export const BILL_FORM_MAX_CENTS = 100_000_001
+
 export type SplitMode = 'equal' | 'custom'
 
 /** Tipo escolhido ao criar a conta. Edições são sempre de uma conta só ("normal"). */
@@ -117,8 +120,10 @@ export function analyzeDraft(draft: BillDraft, individual = false): DraftAnalysi
     errors.total = 'Digite o valor da conta, por exemplo 150,00.'
   } else if (totalCents === 0) {
     errors.total = 'O valor precisa ser maior que zero.'
+  } else if (totalCents > BILL_FORM_MAX_CENTS) {
+    errors.total = 'O valor máximo de uma conta é R$ 1.000.000,00.'
   }
-  const hasValidTotal = totalCents !== null && totalCents > 0
+  const hasValidTotal = totalCents !== null && totalCents > 0 && !errors.total
 
   const dueDay = Number(draft.dueDay)
   if (!Number.isInteger(dueDay) || dueDay < 1 || dueDay > 31) {
