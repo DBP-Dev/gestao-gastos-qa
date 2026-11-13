@@ -1,0 +1,61 @@
+name: Bug
+description: Reportar um defeito encontrado nos testes
+title: "[BUG] "
+labels: ["bug"]
+body:
+  - type: input
+    id: historia
+    attributes:
+      label: História e caso de teste
+      placeholder: US-101 / CT-101-03
+    validations:
+      required: true
+  - type: dropdown
+    id: severidade
+    attributes:
+      label: Severidade
+      options: [Crítica, Alta, Média, Baixa]
+    validations:
+      required: true
+  - type: dropdown
+    id: prioridade
+    attributes:
+      label: Prioridade sugerida
+      options: [Alta, Média, Baixa]
+    validations:
+      required: true
+  - type: input
+    id: ambiente
+    attributes:
+      label: Ambiente
+      placeholder: develop @ a250097, Chrome 140, Windows 11
+    validations:
+      required: true
+  - type: textarea
+    id: passos
+    attributes:
+      label: Passos para reproduzir
+      value: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+  - type: textarea
+    id: esperado
+    attributes:
+      label: Resultado esperado
+      description: Cite a regra ou o critério de aceite.
+    validations:
+      required: true
+  - type: textarea
+    id: obtido
+    attributes:
+      label: Resultado obtido
+    validations:
+      required: true
+  - type: textarea
+    id: evidencia
+    attributes:
+      label: Evidência
+      description: Arraste prints, vídeos ou arquivos para cá.
