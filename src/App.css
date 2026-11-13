@@ -1938,3 +1938,51 @@ select.input option {
     flex: 1 1 100%;
   }
 }
+
+/* ---------- Busca e filtro da lista (US-101 e US-102) ---------- */
+
+.bill-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.bill-toolbar__search {
+  flex: 1 1 220px;
+  min-width: 0;
+}
+
+.bill-toolbar__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-chip {
+  min-height: 40px;
+  padding: 6px 14px;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  background: var(--surface-raised);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.92rem;
+  cursor: pointer;
+}
+
+.filter-chip:hover {
+  border-color: var(--text-soft);
+}
+
+.filter-chip--active {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+  font-weight: 650;
+}
+
+.empty-state--compact {
+  padding-block: 24px;
+}
