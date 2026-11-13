@@ -1,5 +1,6 @@
 import { useId, useState, type ReactNode } from 'react'
-import type { Bill, BillSeries, Member, Today } from '../types'
+import type { Bill, BillSeries, Member, MonthKey, Today } from '../types'
+import { buildBillsCsv, csvFileName, downloadCsv } from '../utils/csvExport'
 import { effectiveDueDay, getBillStatus } from '../utils/dates'
 import { isProjectedBill, seriesLabelFor } from '../utils/series'
 import { BillCard } from './BillCard'
@@ -13,6 +14,10 @@ interface BillListProps {
   members: Member[]
   today: Today
   monthName: string
+  /** Mês exibido, usado no nome do arquivo exportado. */
+  month: MonthKey
+  /** Nome da área, usado no nome do arquivo exportado. */
+  areaName: string
   previousMonthName: string
   /** O mês anterior tem contas comuns para copiar. */
   canCopyPreviousMonth: boolean
@@ -33,6 +38,8 @@ export function BillList({
   members,
   today,
   monthName,
+  month,
+  areaName,
   previousMonthName,
   canCopyPreviousMonth,
   onAdd,
@@ -71,6 +78,16 @@ export function BillList({
     setQuery('')
     setStatusFilter('all')
   }
+  const exportButton = (
+    <button
+      type="button"
+      className="button button--ghost"
+      disabled={sortedBills.length === 0}
+      onClick={() => downloadCsv(csvFileName(areaName, month), buildBillsCsv(sortedBills, today))}
+    >
+      Exportar CSV
+    </button>
+  )
   const showCopyInHeader = canCopyPreviousMonth && !hasCommonBills && sortedBills.length > 0
 
   return (
@@ -82,15 +99,12 @@ export function BillList({
           </h4>
           <p className="section__hint">Organizadas pela data de vencimento</p>
         </div>
-        {actions || showCopyInHeader ? (
-          <div className="section__actions">
-            {actions}
-            {showCopyInHeader && copyButton}
-            {addButton}
-          </div>
-        ) : (
-          addButton
-        )}
+        <div className="section__actions">
+          {actions}
+          {showCopyInHeader && copyButton}
+          {exportButton}
+          {addButton}
+        </div>
       </div>
 
       {notice}
