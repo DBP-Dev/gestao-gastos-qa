@@ -1,8 +1,9 @@
-import { useId, type ReactNode } from 'react'
+import { useId, useState, type ReactNode } from 'react'
 import type { Bill, BillSeries, Member, Today } from '../types'
 import { effectiveDueDay, getBillStatus } from '../utils/dates'
 import { isProjectedBill, seriesLabelFor } from '../utils/series'
 import { BillCard } from './BillCard'
+import { countByFilter, filterBills, STATUS_FILTERS, type StatusFilter } from '../utils/billFilters'
 
 interface BillListProps {
   /** Contas do mês: as gravadas e as previstas das séries. */
@@ -44,6 +45,9 @@ export function BillList({
 }: BillListProps) {
   // Id único: pode haver uma lista por área na mesma página.
   const titleId = useId()
+  const searchId = useId()
+  const [query, setQuery] = useState('')
+  const [statusFilter, setStatusFilter] = useState<StatusFilter>('all')
   const sortedBills = [...bills].sort(
     (a, b) => effectiveDueDay(a) - effectiveDueDay(b) || a.name.localeCompare(b.name),
   )
@@ -60,6 +64,13 @@ export function BillList({
       Copiar contas de {previousMonthName}
     </button>
   )
+  const visibleBills = filterBills(sortedBills, query, statusFilter, today)
+  const counts = countByFilter(sortedBills, query, today)
+  const hasActiveFilter = query.trim() !== '' || statusFilter !== 'all'
+  function clearFilters() {
+    setQuery('')
+    setStatusFilter('all')
+  }
   const showCopyInHeader = canCopyPreviousMonth && !hasCommonBills && sortedBills.length > 0
 
   return (
@@ -102,8 +113,55 @@ export function BillList({
           </div>
         </div>
       ) : (
+        <>
+          <div className="bill-toolbar">
+            <div className="bill-toolbar__search">
+              <label htmlFor={searchId} className="visually-hidden">
+                Buscar conta pelo nome
+              </label>
+              <input
+                id={searchId}
+                type="search"
+                className="input"
+                placeholder="Buscar conta pelo nome"
+                value={query}
+                maxLength={50}
+                onChange={(event) => setQuery(event.target.value)}
+              />
+            </div>
+            <div className="bill-toolbar__filters" role="group" aria-label="Filtrar por situação">
+              {STATUS_FILTERS.map((filter) => (
+                <button
+                  key={filter.value}
+                  type="button"
+                  className={`filter-chip${statusFilter === filter.value ? ' filter-chip--active' : ''}`}
+                  aria-pressed={statusFilter === filter.value}
+                  onClick={() => setStatusFilter(filter.value)}
+                >
+                  {filter.label} ({counts[filter.value]})
+                </button>
+              ))}
+            </div>
+          </div>
+          {visibleBills.length === 0 ? (
+            <div className="empty-state empty-state--compact">
+              <h5>Nenhuma conta encontrada</h5>
+              <p>
+                {query.trim()
+                  ? `Nenhuma conta de ${monthName} corresponde a “${query.trim()}” neste filtro.`
+                  : `Nenhuma conta de ${monthName} neste filtro.`}
+              </p>
+              {hasActiveFilter && (
+                <div className="empty-state__actions">
+                  <button type="button" className="button button--ghost" onClick={clearFilters}>
+                    Limpar busca e filtro
+                  </button>
+                </div>
+              )}
+            </div>
+          ) : (
         <ul className="bill-list">
-          {sortedBills.map((bill) => (
+          {visibleBills.map((bill) => (
             <li key={bill.id}>
               <BillCard
                 bill={bill}
@@ -118,6 +176,8 @@ export function BillList({
             </li>
           ))}
         </ul>
+          )}
+        </>
       )}
     </section>
   )

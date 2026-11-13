@@ -1,0 +1,55 @@
+import { describe, expect, it } from 'vitest'
+import type { Bill } from '../types'
+import { countByFilter, filterBills, matchesSearch } from './billFilters'
+
+function bill(partial: Partial<Bill>): Bill {
+  return {
+    id: partial.name ?? 'conta',
+    name: 'Conta',
+    month: '2026-11',
+    totalCents: 10000,
+    dueDay: 10,
+    shares: [],
+    paid: false,
+    ...partial,
+  }
+}
+
+const today = { month: '2026-11', day: 15 }
+
+describe('matchesSearch', () => {
+  it('encontra pelo trecho do nome, sem diferenciar maiúsculas', () => {
+    expect(matchesSearch(bill({ name: 'Internet' }), 'NET')).toBe(true)
+    expect(matchesSearch(bill({ name: 'Internet' }), 'luz')).toBe(false)
+  })
+
+  it('busca vazia ou só com espaços mostra tudo', () => {
+    expect(matchesSearch(bill({ name: 'Internet' }), '   ')).toBe(true)
+  })
+})
+
+describe('filterBills', () => {
+  const bills = [
+    bill({ name: 'Aluguel', dueDay: 5, paid: true }),
+    bill({ name: 'Internet', dueDay: 20 }),
+  ]
+
+  it('filtra pagas', () => {
+    expect(filterBills(bills, '', 'paid', today).map((b) => b.name)).toEqual(['Aluguel'])
+  })
+
+  it('filtra pendentes', () => {
+    expect(filterBills(bills, '', 'pending', today).map((b) => b.name)).toEqual(['Internet'])
+  })
+
+  it('combina busca e filtro', () => {
+    expect(filterBills(bills, 'alu', 'pending', today)).toEqual([])
+  })
+})
+
+describe('countByFilter', () => {
+  it('conta as contas de cada filtro', () => {
+    const bills = [bill({ name: 'A', paid: true }), bill({ name: 'B', dueDay: 20 })]
+    expect(countByFilter(bills, '', today)).toMatchObject({ all: 2, paid: 1 })
+  })
+})
