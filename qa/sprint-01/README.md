@@ -5,7 +5,7 @@ Histórias e regras: [planejamento da sprint](../../docs/sprints/sprint-01/plane
 
 ## Entregas
 
-- [ ] Plano de teste (`plano-de-teste.md`)
+- [x] Plano de teste ([`plano-de-teste.md`](plano-de-teste.md))
 - [x] Casos de teste da US-101 ([`casos-de-teste/US-101-busca-de-contas.md`](casos-de-teste/US-101-busca-de-contas.md))
 - [ ] Casos de teste da US-102 (`casos-de-teste/CT-102.md`)
 - [ ] Casos de teste da US-103 (`casos-de-teste/CT-103.md`)
