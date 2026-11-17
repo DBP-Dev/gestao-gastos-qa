@@ -5,9 +5,11 @@
 ## CT-101-01 — Busca por parte do nome
 
 **Pré-condição:**
+
 - A área Minhas contas deve possuir as contas Internet e Água cadastradas.
 
 **Passos:**
+
 1. Acessar a página.
 2. Expandir "Minhas contas".
 3. Verificar se as contas "Internet" e "Água" são exibidas.
@@ -15,17 +17,18 @@
 5. Digitar "net" no campo de busca.
 
 **Dados de teste:**
+
 - Conta 1: Internet.
 - Conta 2: Água.
 - Termo de busca: `net`.
 
 **Resultado esperado:**
 
-Ao digitar `net` no campo "Buscar conta pelo nome", deve ser exibida somente a conta "Internet".
+- Ao digitar `net` no campo "Buscar conta pelo nome", deve ser exibida somente a conta "Internet".
 
 **Resultado obtido:**
 
-Ao digitar `net` no campo "Buscar conta pelo nome", somente a conta "Internet" é exibida.
+- Ao digitar `net` no campo "Buscar conta pelo nome", somente a conta "Internet" é exibida.
 
 **Situação:** Passou.
 
@@ -39,9 +42,11 @@ Ao digitar `net` no campo "Buscar conta pelo nome", somente a conta "Internet" �
 ## CT-101-02 — Busca sem diferenciar maiúsculas
 
 **Pré-condição:**
+
 - A área Minhas contas deve possuir a conta Internet cadastrada.
 
 **Passos:**
+
 1. Acessar a página.
 2. Expandir "Minhas contas".
 3. Verificar se a conta "Internet" é exibida.
@@ -49,17 +54,18 @@ Ao digitar `net` no campo "Buscar conta pelo nome", somente a conta "Internet" �
 5. Digitar 'INTERNET' no campo de busca.
 
 **Dados de teste:**
+
 - Conta 1: Internet.
 - Conta 2: Água.
 - Termo de busca: 'INTERNET'.
 
 **Resultado esperado:**
 
-Ao digitar 'INTERNET' no campo "Buscar conta pelo nome", deve ser exibida a conta "Internet".
+- Ao digitar 'INTERNET' no campo "Buscar conta pelo nome", deve ser exibida a conta "Internet".
 
 **Resultado obtido:**
 
-Ao digitar 'INTERNET' no campo "Buscar conta pelo nome", somente a conta "Internet" é exibida.
+- Ao digitar 'INTERNET' no campo "Buscar conta pelo nome", somente a conta "Internet" é exibida.
 
 **Situação:** Passou.
 
@@ -73,9 +79,11 @@ Ao digitar 'INTERNET' no campo "Buscar conta pelo nome", somente a conta "Intern
 ## CT-101-03 — Busca sem diferenciar acentos.
 
 **Pré-condição:**
+
 - A área Minhas contas deve possuir as contas "Água" e "Condomínio" cadastradas.
 
 **Passos:**
+
 1. Acessar a página.
 2. Expandir "Minhas contas".
 3. Verificar se as contas "Água" e "Condomínio" são exibidas.
@@ -85,6 +93,7 @@ Ao digitar 'INTERNET' no campo "Buscar conta pelo nome", somente a conta "Intern
 7. Digitar 'condominio' no campo de busca.
 
 **Dados de teste:**
+
 - Conta 1: Água.
 - Conta 2: Condomínio.
 - Termo de busca: 'agua'.
@@ -112,9 +121,11 @@ Ao digitar 'INTERNET' no campo "Buscar conta pelo nome", somente a conta "Intern
 ## CT-101-04 — Busca sem resultado.
 
 **Pré-condição:**
+
 - A área Minhas contas deve possuir pelo menos uma conta registrada.
 
 **Passos:**
+
 1. Acessar a página.
 2. Expandir "Minhas contas".
 3. Clicar em "Buscar conta pelo nome".
@@ -122,15 +133,16 @@ Ao digitar 'INTERNET' no campo "Buscar conta pelo nome", somente a conta "Intern
 5. Clicar em "Limpar busca e filtro".
 
 **Dados de teste:**
+
 - Termo de busca: 'xyz'.
 
 **Resultado esperado:**
 
-Ao digitar 'xyz' no campo "Buscar conta pelo nome", a mensagem "Nenhuma conta encontrada" deve ser exibida, logo após o botão "Limpar busca e filtro" deve ser exibido e ao clicar no botão a lista completa de contas deve voltar.
+- Ao digitar 'xyz' no campo "Buscar conta pelo nome", a mensagem "Nenhuma conta encontrada" deve ser exibida, logo após o botão "Limpar busca e filtro" deve ser exibido e ao clicar no botão a lista completa de contas deve voltar.
 
 **Resultado obtido:**
 
-Ao digitar 'xyz' no campo "Buscar conta pelo nome", a mensagem "Nenhuma conta encontrada" é exibida, o botão "Limpar busca e filtro" aparece e ao clicar nele, a lista completa volta.
+- Ao digitar 'xyz' no campo "Buscar conta pelo nome", a mensagem "Nenhuma conta encontrada" é exibida, o botão "Limpar busca e filtro" aparece e ao clicar nele, a lista completa volta.
 
 **Situação:** Passou.
 
@@ -144,9 +156,11 @@ Ao digitar 'xyz' no campo "Buscar conta pelo nome", a mensagem "Nenhuma conta en
 ## CT-101-05 — Mês sem contas.
 
 **Pré-condição:**
+
 - O mês selecionado não deve possuir contas.
 
 **Passos:**
+
 1. Acessar a página.
 2. Expandir "Minhas contas".
 3. Navegar até outubro de 2026, mês sem contas.
@@ -157,11 +171,11 @@ Não há necessidade de dados.
 
 **Resultado esperado:**
 
-Ao expandir a área "Minhas contas" e a mesma não possuir contas, o campo de buscas não deve ser exibido.
+- Ao expandir a área "Minhas contas" e a mesma não possuir contas, o campo de buscas não deve ser exibido.
 
 **Resultado obtido:**
 
-Ao expandir a área de "Minhas contas" e visualizar que ela está vazia, a barra de "Buscar conta pelo nome" não aparece.
+- Ao expandir a área de "Minhas contas" e visualizar que ela está vazia, a barra de "Buscar conta pelo nome" não aparece.
 
 **Situação:** Passou.
 
@@ -175,9 +189,11 @@ Ao expandir a área de "Minhas contas" e visualizar que ela está vazia, a barra
 ## CT-101-06 — O campo aceita até 50 caracteres.
 
 **Pré-condição:**
+
 - A área Minhas contas deve possuir pelo menos uma conta registrada para que o campo "Buscar conta pelo nome" seja exibido.
 
 **Passos:**
+
 1. Acessar a página.
 2. Expandir "Minhas contas".
 3. Digitar os 49 caracteres no campo de busca.
@@ -189,13 +205,14 @@ Ao expandir a área de "Minhas contas" e visualizar que ela está vazia, a barra
 9. Verificar se o campo impede a inserção.
 
 **Dados de teste:**
+
 - 49 caracteres: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
 - 50 caracteres: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
 
 
 **Resultado esperado:**
 
-O campo deve aceitar os 50 caracteres informados. Ao tentar inserir o 51º caractere, ele não deve ser adicionado.
+- O campo deve aceitar os 50 caracteres informados. Ao tentar inserir o 51º caractere, ele não deve ser adicionado.
 
 **Resultado obtido:**
 
@@ -215,9 +232,11 @@ O campo deve aceitar os 50 caracteres informados. Ao tentar inserir o 51º carac
 ## CT-101-07 — Verificar se a busca mantém os resumos financeiros inalterados.
 
 **Pré-condição:**
+
 - Ter pelo menos duas contas cadastradas no mês, com valores conhecidos.
 
 **Passos:**
+
 1. Acessar a aplicação.
 2. Expandir a área "Minhas contas".
 3. Registrar os valores apresentados nos resumos financeiros.
@@ -238,11 +257,11 @@ Gastos da casa:
 
 **Resultado esperado:**
 
-Os resumos devem continuar apresentando os mesmos valores, independentemente do filtro de busca.
+- Os resumos devem continuar apresentando os mesmos valores, independentemente do filtro de busca.
 
 **Resultado obtido:**
 
-Após realizar os passos descritos, foi possível verificar que os valores apresentados nos resumos financeiros permaneceram iguais aos registrados antes da aplicação do filtro de busca.
+- Após realizar os passos descritos, foi possível verificar que os valores apresentados nos resumos financeiros permaneceram iguais aos registrados antes da aplicação do filtro de busca.
 
 **Situação:** Passou.
 
@@ -270,26 +289,31 @@ Após realizar os passos descritos, foi possível verificar que os valores apres
 ## CT-101-08 — Espaços no começo e no fim do texto são ignorados.
 
 **Pré-condição:**
+
 - A área Minhas contas deve possuir as contas "Internet" e "Água" cadastradas.
 
 **Passos:**
+
 1. Acessar a página.
 2. Expandir "Minhas contas".
 3. Clicar em "Buscar conta pelo nome".
 4. Digitar "  net  " no campo de busca.
 
 **Dados de teste:**
+
 - Conta 1: Internet.
 - Conta 2: Água.
 - Termo de busca: "  net  ", com espaços antes e depois.
 
 
 **Resultado esperado:**
+
 - Regra da US-101: "Espaços no começo e no fim do texto são ignorados".
 - Ao digitar "  net  ", deve ser exibida somente a conta "Internet".
 
 **Resultado obtido:**
-Ao expandir a área "Minhas contas" e digitar "  net  ", a conta "Internet" é exibida.
+
+- Ao expandir a área "Minhas contas" e digitar "  net  ", a conta "Internet" é exibida.
 
 **Situação:** Passou.
 
@@ -306,6 +330,7 @@ Ao expandir a área "Minhas contas" e digitar "  net  ", a conta "Internet" é e
 - As áreas "Minhas contas" e "Gastos da casa" devem possuir as contas "Internet" e "Água" cadastradas.
 
 **Passos:**
+
 1. Acessar a página.
 2. Expandir "Minhas contas" e "Gastos da casa".
 3. Em "Minhas contas", digitar "Internet" no campo de busca.
@@ -315,17 +340,20 @@ Ao expandir a área "Minhas contas" e digitar "  net  ", a conta "Internet" é e
 7. Conferir que a lista de "Minhas contas" continua com as duas contas.
 
 **Dados de teste:**
+
 - Conta 1: Internet.
 - Conta 2: Água.
 - Termo de busca: "Internet".
 - Termo de busca: "Água".
 
 **Resultado esperado:**
+
 - Regra da US-101: "Cada área tem a sua própria busca".
 - Buscar contas em uma área não deve afetar a lista das outras áreas.
 
 **Resultado obtido:**
-Ao buscar "Internet" em "Minhas contas", "Gastos da casa" continua mostrando as contas "Água" e "Internet" e ao buscar por "Água" em "Gastos da casa", "Minhas contas" continua mostrando as contas "Água" e "Internet".
+
+- Ao buscar "Internet" em "Minhas contas", "Gastos da casa" continua mostrando as contas "Água" e "Internet" e ao buscar por "Água" em "Gastos da casa", "Minhas contas" continua mostrando as contas "Água" e "Internet".
 
 **Situação:** Passou.
 

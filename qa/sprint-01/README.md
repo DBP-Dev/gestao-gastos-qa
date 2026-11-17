@@ -7,7 +7,7 @@ Histórias e regras: [planejamento da sprint](../../docs/sprints/sprint-01/plane
 
 - [x] Plano de teste ([`plano-de-teste.md`](plano-de-teste.md))
 - [x] Casos de teste da US-101 ([`casos-de-teste/US-101-busca-de-contas.md`](casos-de-teste/US-101-busca-de-contas.md))
-- [ ] Casos de teste da US-102 (`casos-de-teste/CT-102.md`)
+- [x] Casos de teste da US-102 ([`casos-de-teste/US-102-filtro-por-situacao.md`](casos-de-teste/US-102-filtro-por-situacao.md))
 - [ ] Casos de teste da US-103 (`casos-de-teste/CT-103.md`)
 - [ ] Casos de teste da US-104 (`casos-de-teste/CT-104.md`)
 - [ ] Bugs reportados (`bugs/` e Issues do GitHub)
@@ -20,3 +20,4 @@ Histórias e regras: [planejamento da sprint](../../docs/sprints/sprint-01/plane
 | Bug | Título | Severidade | Issue | Situação |
 | --- | --- | --- | --- | --- |
 | [BUG-001](bugs/BUG-001.md) | Busca não encontra contas com acento quando o termo é digitado sem acento | Média | A criar | Aberto |
+| [BUG-002](bugs/BUG-002.md) | Filtro "Pendentes" não exibe contas atrasadas | Média | A criar | Aberto |
