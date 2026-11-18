@@ -11,9 +11,12 @@ export const STATUS_FILTERS: { value: StatusFilter; label: string }[] = [
   { value: 'late', label: 'Atrasadas' },
 ]
 
-/** Prepara um texto para comparação na busca (US-101). */
+/**
+ * Prepara um texto para comparação na busca (US-101): ignora maiúsculas e acentos.
+ * O NFD separa a letra do acento ("á" vira "a" + "´") e o replace remove os acentos soltos.
+ */
 export function normalizeSearchText(text: string): string {
-  return text.toLowerCase().trim()
+  return text.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().trim()
 }
 
 /** A conta aparece na busca quando o nome contém o texto digitado. */
