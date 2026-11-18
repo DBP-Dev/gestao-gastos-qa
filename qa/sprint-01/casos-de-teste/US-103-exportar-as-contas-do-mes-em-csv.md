@@ -269,6 +269,8 @@ Variação: em fevereiro de 2027, uma conta com vencimento no dia 31 aparece na 
 
 ![CSV: conta "cartão" com vencimento 31/02/2027](../evidencias/CT-103-06e.png)
 
+**Reteste:** Passou em 18/11, commit 42dd2fa — ver [BUG-003](../bugs/BUG-003.md)
+
 ---
 
 ## CT-103-07 — Verificar o formato dos valores no arquivo CSV
