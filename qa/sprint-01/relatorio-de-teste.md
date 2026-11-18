@@ -32,7 +32,7 @@ Após as correções, os **38 casos passaram**. Os **5 bugs foram corrigidos e r
 | [BUG-004](bugs/BUG-004.md) | Média | Corrigido | Passou — 18/11 |
 | [BUG-005](bugs/BUG-005.md) | Baixa | Corrigido | Passou — 18/11 |
 
-Nenhum bug novo foi encontrado durante a regressão. Os bugs foram documentados neste repositório; as Issues do GitHub ainda não foram criadas, conforme indicado nos reportes.
+Nenhum bug novo foi encontrado durante a regressão. Os bugs foram documentados neste repositório e registrados como [Issues no GitHub](https://github.com/DBP-Dev/gestao-gastos-qa/issues?q=is%3Aissue) (#1 a #5), todas fechadas como concluídas após o reteste.
 
 ## 4. Critérios de saída do plano
 
@@ -41,7 +41,7 @@ Nenhum bug novo foi encontrado durante a regressão. Os bugs foram documentados 
 | Casos planejados executados ou justificados | Atendido com ressalvas | Os 38 CTs foram executados. Compatibilidade com Chrome e Firefox não foi validada. |
 | Resultados registrados | Atendido | Resultados registrados nos casos de teste e na regressão. |
 | Evidências organizadas | Atendido | Prints e gravações disponíveis na pasta `evidencias/`. |
-| Bugs documentados e registrados como Issues | Parcialmente atendido | Os 5 bugs estão documentados; as Issues ainda não foram criadas. |
+| Bugs documentados e registrados como Issues | Atendido | Os 5 bugs estão documentados e registrados como Issues (#1 a #5). |
 | Correções submetidas a reteste | Atendido | Os 5 bugs foram retestados e passaram. |
 | Regressão das funcionalidades relacionadas | Atendido | Os 9 itens da regressão passaram. |
 | Nenhum bug crítico ou alto aberto | Atendido | Não há bugs críticos ou altos em aberto. |
