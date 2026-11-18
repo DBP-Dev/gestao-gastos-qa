@@ -1,0 +1,10 @@
+﻿Nome;Vencimento;Valor;Situação
+Aluguel;05/11/2026;1500,00;Paga
+Água;10/11/2026;150,00;Atrasada
+Condomínio;12/11/2026;450,00;Atrasada
+Internet;20/11/2026;99,90;Pendente
+Interfone;22/11/2026;50,00;Pendente
+Farmácia;25/11/2026;30,00;Pendente
+"Água; Condominio";26/11/2026;10,00;Pendente
+"Conta ""Especial""";27/11/2026;10,00;Pendente
+Cartão;30/11/2026;200,00;Pendente

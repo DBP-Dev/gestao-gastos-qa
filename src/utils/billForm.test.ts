@@ -338,3 +338,24 @@ describe('origem dos valores na confirmação (describeSeriesEditOrigin)', () =>
     })
   })
 })
+
+describe('US-104: limite de valor da conta', () => {
+  it('recusa valores muito acima de R$ 1.000.000,00', () => {
+    const draft = { ...createDraft(), name: 'Carro', total: '2.000.000,00', memberIds: ['eu'] }
+    expect(analyzeDraft(draft).errors.total).toBe('O valor máximo de uma conta é R$ 1.000.000,00.')
+  })
+
+  it('aceita R$ 1.000.000,00', () => {
+    const draft = { ...createDraft(), name: 'Casa', total: '1.000.000,00', memberIds: ['eu'] }
+    expect(analyzeDraft(draft).errors.total).toBeUndefined()
+  })
+
+  it('valor-limite: aceita até R$ 1.000.000,00 e recusa a partir de R$ 1.000.000,01 (BUG-005)', () => {
+    const erro = (total: string) =>
+      analyzeDraft({ ...createDraft(), name: 'Conta', total, memberIds: ['eu'] }).errors.total
+    expect(erro('999.999,99')).toBeUndefined()
+    expect(erro('1.000.000,00')).toBeUndefined()
+    expect(erro('1.000.000,01')).toBe('O valor máximo de uma conta é R$ 1.000.000,00.')
+    expect(erro('1.000.000,02')).toBe('O valor máximo de uma conta é R$ 1.000.000,00.')
+  })
+})

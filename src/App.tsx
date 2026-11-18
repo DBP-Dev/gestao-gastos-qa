@@ -482,6 +482,8 @@ function App() {
         members={area.members}
         today={today}
         monthName={formatMonthName(month)}
+        month={month}
+        areaName={area.name}
         previousMonthName={formatMonthName(previousMonth)}
         canCopyPreviousMonth={hasCommonBillsIn(area, previousMonth)}
         onAdd={() =>
@@ -740,6 +742,8 @@ function App() {
               members={store.members}
               today={today}
               monthName={formatMonthName(month)}
+              month={month}
+              areaName={homeArea.name}
               previousMonthName={formatMonthName(previousMonth)}
               canCopyPreviousMonth={hasCommonBillsIn(homeArea, previousMonth)}
               onAdd={() => setBillForm({ mode: 'new', areaId: HOME_AREA_ID })}
