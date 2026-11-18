@@ -11,8 +11,8 @@ Histórias e regras: [planejamento da sprint](../../docs/sprints/sprint-01/plane
 - [x] Casos de teste da US-103 ([`casos-de-teste/US-103-exportar-as-contas-do-mes-em-csv.md`](casos-de-teste/US-103-exportar-as-contas-do-mes-em-csv.md))
 - [x] Casos de teste da US-104 ([`casos-de-teste/US-104-limita-o-valor-de-uma-conta.md`](casos-de-teste/US-104-limita-o-valor-de-uma-conta.md))
 - [ ] Bugs reportados (`bugs/` e Issues do GitHub)
-- [ ] Reteste das correções
-- [ ] Regressão da versão 1.0 (`regressao.md`)
+- [x] Reteste das correções
+- [x] Regressão da versão 1.0 ([`regressao.md`](regressao.md))
 - [ ] Relatório de testes com parecer go / no-go (`relatorio-de-teste.md`)
 
 ## Bugs encontrados
