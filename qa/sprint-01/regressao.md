@@ -4,7 +4,7 @@
 
 **Data:** 18/11/2026.
 
-**Executada por:** Claude (assistente de IA), a pedido do QA. Os casos de teste, o escopo e os critérios são os definidos pelo QA neste repositório.
+**Executada por:** Claude (assistente de IA), a pedido do QA. Os casos de teste, o escopo e os critérios são os definidos pelo QA neste repositório. A abertura do CSV no Excel Online (CT-103-09 e CT-103-10) foi feita pelo QA.
 
 ## Objetivo
 
@@ -28,7 +28,6 @@ O commit `877a466` tem o mesmo código do `b7903de` (merge do BUG-005); o commit
 
 **Fora do escopo desta execução:**
 
-- Abertura do CSV no Excel Online (CT-103-09 e parte do CT-103-10).
 - Microsoft Edge 157 e Firefox.
 - Testes exploratórios.
 
@@ -82,13 +81,15 @@ O commit `877a466` tem o mesmo código do `b7903de` (merge do BUG-005); o commit
 | CT-103-06 | Formato do vencimento | Passou. | "Cartão" com dia 31 sai como `30/11/2026`, igual à tela. |
 | CT-103-07 | Formato dos valores | Passou. | `1500,00`, `150,00` e `99,90`. |
 | CT-103-08 | Situação das contas | Passou. | `Paga`, `Atrasada` e `Pendente`, iguais aos cartões. |
-| CT-103-09 | Abertura no Excel Online | Não executado. | O Excel Online não foi aberto nesta execução. |
-| CT-103-10 | Nomes com ponto e vírgula ou aspas | Passou no arquivo. | Os nomes saem completos e as colunas ficam no lugar. O arquivo não foi aberto no Excel. |
+| CT-103-09 | Abertura no Excel Online | Passou. | As colunas ficam separadas e os acentos aparecem corretos: "Água", "Condomínio", "Farmácia", "Cartão" e "Situação". |
+| CT-103-10 | Nomes com ponto e vírgula ou aspas | Passou. | No Excel Online, "Água; Condominio" e "Conta "Especial"" aparecem completos na coluna Nome, e as outras colunas ficam no lugar. |
 | CT-103-11 | Botão desabilitado em mês sem contas | Passou. | Em janeiro de 2027 o botão fica desabilitado e nada é baixado. |
 
 **Evidência:**
 
 [Gastos da casa: arquivo CSV exportado](evidencias/regressao-gastos-da-casa-2026-11.csv)
+
+![Gastos da casa: CSV aberto no Excel Online](evidencias/regressao-CT-103-09-excel-online.png)
 
 ### US-104: Limite de valor
 
@@ -332,10 +333,6 @@ Nenhum bug novo.
 
 ## Resumo
 
-- **Casos de teste da sprint:** 38 no total.
-  - 37 passaram; o CT-103-10 passou só no arquivo, sem abrir no Excel.
-  - O CT-103-09 não foi executado.
+- **Casos de teste da sprint:** os 38 passaram.
 - **Regressão da versão 1.0:** os 9 itens passaram.
-- **Pendências para o relatório final:**
-  - abrir o CSV no Excel Online (CT-103-09 e CT-103-10);
-  - executar no Microsoft Edge 157 e no Firefox.
+- **Pendências para o relatório final:** executar no Microsoft Edge 157 e no Firefox.
