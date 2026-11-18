@@ -49,6 +49,8 @@
 
 ![Evidência CT-102-01](../evidencias/CT-102-01.png)
 
+**Reteste:** Passou em 18/11, commit 7184392 — ver [BUG-002](../bugs/BUG-002.md)
+
 ---
 
 ## CT-102-02 — Filtro Pendentes inclui contas atrasadas
@@ -92,6 +94,8 @@
 ![Evidência CT-102-02: lista com o filtro Todas](../evidencias/CT-102-02a.png)
 
 ![Evidência CT-102-02: lista com o filtro Pendentes](../evidencias/CT-102-02b.png)
+
+**Reteste:** Passou em 18/11, commit 7184392 — ver [BUG-002](../bugs/BUG-002.md)
 
 ---
 
@@ -228,6 +232,8 @@
 
 [Assistir à gravação CT-102-05](../evidencias/CT-102-05.mp4)
 
+**Reteste:** Passou em 18/11, commit 7184392 — ver [BUG-002](../bugs/BUG-002.md)
+
 ---
 
 ## CT-102-06 — Atualização dos filtros ao desmarcar uma conta como paga
@@ -276,6 +282,8 @@
 **Evidência:**
 
 [Assistir à gravação CT-102-06](../evidencias/CT-102-06.mp4)
+
+**Reteste:** Passou em 18/11, commit 7184392 — ver [BUG-002](../bugs/BUG-002.md)
 
 ---
 

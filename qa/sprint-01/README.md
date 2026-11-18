@@ -20,7 +20,7 @@ Histórias e regras: [planejamento da sprint](../../docs/sprints/sprint-01/plane
 | Bug | Título | Severidade | Issue | Situação |
 | --- | --- | --- | --- | --- |
 | [BUG-001](bugs/BUG-001.md) | Busca não encontra contas com acento quando o termo é digitado sem acento | Média | A criar | Corrigido |
-| [BUG-002](bugs/BUG-002.md) | Filtro "Pendentes" não exibe contas atrasadas | Média | A criar | Aberto |
+| [BUG-002](bugs/BUG-002.md) | Filtro "Pendentes" não exibe contas atrasadas | Média | A criar | Corrigido |
 | [BUG-003](bugs/BUG-003.md) | CSV exporta data de vencimento inexistente (ex.: 31/11, 31/02) quando o dia cadastrado não existe no mês | Média | A criar | Aberto |
 | [BUG-004](bugs/BUG-004.md) | Acentos aparecem corrompidos ao abrir o CSV exportado no Excel (ex.: "Ã�gua" em vez de "Água") | Média | A criar | Aberto |
 | [BUG-005](bugs/BUG-005.md) | Conta com valor de R$ 1.000.000,01 é salva, um centavo acima do limite de R$ 1.000.000,00 | Baixa | A criar | Aberto |
