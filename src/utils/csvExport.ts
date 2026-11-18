@@ -1,5 +1,5 @@
 import type { Bill, BillStatus, MonthKey, Today } from '../types'
-import { getBillStatus } from './dates'
+import { effectiveDueDay, getBillStatus } from './dates'
 import { centsToInput } from './money'
 
 const STATUS_LABEL: Record<BillStatus, string> = {
@@ -16,7 +16,10 @@ function escapeField(value: string): string {
   return value
 }
 
-/** "2026-11" e dia 5 → "05/11/2026" */
+/**
+ * "2026-11" e dia 5 → "05/11/2026". Recebe o dia já ajustado ao tamanho do mês
+ * (effectiveDueDay), o mesmo que a tela mostra: dia 31 em novembro vira 30/11.
+ */
 function formatDueDate(month: MonthKey, day: number): string {
   const [year, monthNumber] = month.split('-')
   return `${String(day).padStart(2, '0')}/${monthNumber}/${year}`
@@ -29,7 +32,7 @@ export function buildBillsCsv(bills: Bill[], today: Today): string {
     lines.push(
       [
         escapeField(bill.name),
-        formatDueDate(bill.month, bill.dueDay),
+        formatDueDate(bill.month, effectiveDueDay(bill)),
         centsToInput(bill.totalCents),
         STATUS_LABEL[getBillStatus(bill, today)],
       ].join(';'),

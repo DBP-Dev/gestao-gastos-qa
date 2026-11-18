@@ -29,6 +29,15 @@ describe('buildBillsCsv', () => {
     ])
   })
 
+  it('ajusta o vencimento ao último dia quando o dia não existe no mês (BUG-003)', () => {
+    const vencimento = (partial: Partial<Bill>) =>
+      buildBillsCsv([bill({ name: 'Cartão', ...partial })], today).split('\r\n')[1].split(';')[1]
+    expect(vencimento({ month: '2026-11', dueDay: 31 })).toBe('30/11/2026')
+    expect(vencimento({ month: '2027-02', dueDay: 31 })).toBe('28/02/2027')
+    expect(vencimento({ month: '2028-02', dueDay: 30 })).toBe('29/02/2028')
+    expect(vencimento({ month: '2026-12', dueDay: 31 })).toBe('31/12/2026')
+  })
+
   it('coloca entre aspas nomes com ponto e vírgula', () => {
     const csv = buildBillsCsv([bill({ name: 'Luz; gás' })], today)
     expect(csv.split('\r\n')[1].startsWith('"Luz; gás";')).toBe(true)
