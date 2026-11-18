@@ -13,7 +13,7 @@ Histórias e regras: [planejamento da sprint](../../docs/sprints/sprint-01/plane
 - [ ] Bugs reportados (`bugs/` e Issues do GitHub)
 - [x] Reteste das correções
 - [x] Regressão da versão 1.0 ([`regressao.md`](regressao.md))
-- [ ] Relatório de testes com parecer go / no-go (`relatorio-de-teste.md`)
+- [x] Relatório de testes com parecer go / no-go ([`relatorio-de-teste.md`](relatorio-de-teste.md))
 
 ## Bugs encontrados
 
