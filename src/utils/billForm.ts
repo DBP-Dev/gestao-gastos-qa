@@ -2,8 +2,11 @@ import type { Bill, BillShare, Member } from '../types'
 import { centsToInput, formatBRL, parseMoneyInput, splitEvenly } from './money'
 import { validateInstallmentCount } from './series'
 
-/** US-104: maior valor aceito para uma conta no formulário (R$ 1.000.000,00). */
-export const BILL_FORM_MAX_CENTS = 100_000_001
+/**
+ * US-104: maior valor aceito para uma conta no formulário (R$ 1.000.000,00), em centavos.
+ * A comparação é "acima de", então o próprio limite é aceito e R$ 1.000.000,01 é recusado.
+ */
+export const BILL_FORM_MAX_CENTS = 100_000_000
 
 export type SplitMode = 'equal' | 'custom'
 
