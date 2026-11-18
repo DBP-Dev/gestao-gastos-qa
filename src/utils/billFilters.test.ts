@@ -23,6 +23,15 @@ describe('matchesSearch', () => {
     expect(matchesSearch(bill({ name: 'Internet' }), 'luz')).toBe(false)
   })
 
+  it('não diferencia acentos, nem no nome nem no texto digitado (BUG-001)', () => {
+    expect(matchesSearch(bill({ name: 'Água' }), 'agua')).toBe(true)
+    expect(matchesSearch(bill({ name: 'Condomínio' }), 'condominio')).toBe(true)
+    expect(matchesSearch(bill({ name: 'Agua' }), 'Água')).toBe(true)
+    expect(matchesSearch(bill({ name: 'Manutenção' }), 'MANUTENCAO')).toBe(true)
+    expect(matchesSearch(bill({ name: 'Água' }), 'gua')).toBe(true)
+    expect(matchesSearch(bill({ name: 'Água' }), 'luz')).toBe(false)
+  })
+
   it('busca vazia ou só com espaços mostra tudo', () => {
     expect(matchesSearch(bill({ name: 'Internet' }), '   ')).toBe(true)
   })
