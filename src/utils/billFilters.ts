@@ -26,8 +26,13 @@ export function matchesSearch(bill: Bill, query: string): boolean {
   return normalizeSearchText(bill.name).includes(normalizedQuery)
 }
 
+/**
+ * "Pendentes" é tudo o que falta pagar: as contas no prazo e também as atrasadas (US-102),
+ * o mesmo conceito do "Falta pagar" do resumo. Os outros filtros comparam a situação exata.
+ */
 export function matchesStatus(status: BillStatus, filter: StatusFilter): boolean {
   if (filter === 'all') return true
+  if (filter === 'pending') return status !== 'paid'
   return status === filter
 }
 
