@@ -51,6 +51,17 @@ describe('filterBills', () => {
     expect(filterBills(bills, '', 'pending', today).map((b) => b.name)).toEqual(['Internet'])
   })
 
+  it('pendentes inclui as atrasadas, como o "Falta pagar" (BUG-002)', () => {
+    const contas = [
+      bill({ name: 'Aluguel', dueDay: 5, paid: true }),
+      bill({ name: 'Luz', dueDay: 10 }),
+      bill({ name: 'Internet', dueDay: 20 }),
+    ]
+    expect(filterBills(contas, '', 'pending', today).map((b) => b.name)).toEqual(['Luz', 'Internet'])
+    expect(filterBills(contas, '', 'late', today).map((b) => b.name)).toEqual(['Luz'])
+    expect(countByFilter(contas, '', today)).toEqual({ all: 3, pending: 2, paid: 1, late: 1 })
+  })
+
   it('combina busca e filtro', () => {
     expect(filterBills(bills, 'alu', 'pending', today)).toEqual([])
   })
