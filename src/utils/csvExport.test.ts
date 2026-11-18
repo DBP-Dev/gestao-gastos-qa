@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import type { Bill } from '../types'
-import { buildBillsCsv, csvFileName, slugify } from './csvExport'
+import { buildBillsCsv, csvBlob, csvFileName, slugify } from './csvExport'
 
 const today = { month: '2026-11', day: 15 }
 
@@ -41,6 +41,15 @@ describe('buildBillsCsv', () => {
   it('coloca entre aspas nomes com ponto e vírgula', () => {
     const csv = buildBillsCsv([bill({ name: 'Luz; gás' })], today)
     expect(csv.split('\r\n')[1].startsWith('"Luz; gás";')).toBe(true)
+  })
+})
+
+describe('csvBlob', () => {
+  it('começa com o BOM do UTF-8 para o Excel reconhecer os acentos (BUG-004)', async () => {
+    const bytes = new Uint8Array(await csvBlob('Nome\r\nÁgua').arrayBuffer())
+    expect([...bytes.slice(0, 3)]).toEqual([0xef, 0xbb, 0xbf])
+    // "Á" em UTF-8 são dois bytes: C3 81.
+    expect([...bytes.slice(9, 11)]).toEqual([0xc3, 0x81])
   })
 })
 

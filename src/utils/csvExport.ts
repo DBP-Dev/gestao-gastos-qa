@@ -57,9 +57,21 @@ export function csvFileName(areaName: string, month: MonthKey): string {
   return `gastos-${slugify(areaName)}-${month}.csv`
 }
 
+/**
+ * Marca de ordem de bytes (BOM) do UTF-8. Sem ela, o Excel abre o CSV na codificação
+ * antiga do Windows e "Água" vira "Ã�gua" (BUG-004). O Bloco de Notas detecta o UTF-8
+ * sozinho, por isso mostrava os acentos certos mesmo sem a marca.
+ */
+const UTF8_BOM = '﻿'
+
+/** Arquivo do CSV como será baixado: BOM do UTF-8 seguido do conteúdo. */
+export function csvBlob(content: string): Blob {
+  return new Blob([UTF8_BOM + content], { type: 'text/csv;charset=utf-8' })
+}
+
 /** Baixa o CSV no navegador. */
 export function downloadCsv(fileName: string, content: string): void {
-  const blob = new Blob([content], { type: 'text/csv;charset=utf-8' })
+  const blob = csvBlob(content)
   const url = URL.createObjectURL(blob)
   const link = document.createElement('a')
   link.href = url
