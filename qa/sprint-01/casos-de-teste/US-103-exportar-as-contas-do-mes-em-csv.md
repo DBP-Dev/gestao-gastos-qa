@@ -434,6 +434,8 @@ Ao abrir o arquivo no Excel Online em português:
 
 ![Dados exibidos no Excel](../evidencias/CT-103-09c.png)
 
+**Reteste:** Passou em 18/11, commit 6123d8b — ver [BUG-004](../bugs/BUG-004.md)
+
 ---
 
 ## CT-103-10 — Exportar contas com nomes que possuem ponto e vírgula ou aspas
