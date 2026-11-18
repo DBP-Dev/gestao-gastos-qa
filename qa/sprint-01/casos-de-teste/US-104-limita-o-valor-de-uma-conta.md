@@ -131,6 +131,8 @@ A conta é salva normalmente, pois o valor informado corresponde ao limite máxi
 
 [Descobrindo limite](../evidencias/CT-104-03b.mp4)
 
+**Reteste:** Passou em 18/11, commit b7903de — ver [BUG-005](../bugs/BUG-005.md)
+
 ---
 
 ## CT-104-04 — Impedir a criação de conta com valor muito acima do limite
@@ -273,6 +275,8 @@ Nas duas áreas, a mensagem "O valor máximo de uma conta é R$ 1.000.000,00." d
 [Criação conta em "Gastos da casa"](../evidencias/CT-104-06b.mp4)
 
 [Descobrindo limite](../evidencias/CT-104-06c.mp4)
+
+**Reteste:** Passou em 18/11, commit b7903de — ver [BUG-005](../bugs/BUG-005.md)
 
 ---
 
@@ -439,6 +443,8 @@ Nas duas áreas, a mensagem "O valor máximo de uma conta é R$ 1.000.000,00." d
 [Descobrindo limite conta parcelada](../evidencias/CT-104-09c.mp4)
 
 [Descobrindo limite conta recorrente](../evidencias/CT-104-09d.mp4)
+
+**Reteste:** Passou em 18/11, commit b7903de — ver [BUG-005](../bugs/BUG-005.md)
 
 ---
 
