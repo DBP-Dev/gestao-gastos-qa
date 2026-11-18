@@ -16,4 +16,4 @@ qa/
 
 | Sprint | Versão | Situação |
 | --- | --- | --- |
-| [Sprint 1](sprint-01/README.md) | 1.1.0 | Em teste |
+| [Sprint 1](sprint-01/README.md) | 1.1.0 | Concluída: GO com ressalvas |
