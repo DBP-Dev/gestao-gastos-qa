@@ -33,6 +33,7 @@ Identificar, documentar e encaminhar os defeitos encontrados durante os testes, 
 - Funcionalidades que não fazem parte das histórias selecionadas para a Sprint 1, exceto as incluídas na regressão.
 - Testes em aparelhos de celular reais; nesta sprint o celular é verificado só pela visualização do DevTools.
 - Testes de desempenho e segurança, que não estão previstos no escopo desta sprint.
+- Abertura do CSV com duplo clique no Excel instalado, pois ele não está disponível na máquina de teste; o CSV é validado no Excel Online.
 
 ## 3. Estratégia de testes
 
@@ -81,7 +82,7 @@ Identificar, documentar e encaminhar os defeitos encontrados durante os testes, 
 - **Editor:** Visual Studio Code.
 - **Controle de versão:** Git e GitHub.
 - **Evidências:** capturas de tela e gravações de execução.
-- **Ferramentas adicionais:** Microsoft Excel em português para validar os arquivos CSV.
+- **Ferramentas adicionais:** Microsoft Excel Online (navegador), em português, para validar os arquivos CSV. O Excel instalado não está disponível na máquina de teste.
 
 ## 5. Critérios
 
@@ -115,7 +116,8 @@ Identificar, documentar e encaminhar os defeitos encontrados durante os testes, 
 | O desenvolvedor não testou o CSV no Excel, nem no Firefox ou no celular | Defeitos nesses pontos chegariam à produção sem ninguém ter visto | Executar esses testes primeiro. |
 | A situação "atrasada" depende da data de hoje | Filtros e CSV podem parecer corretos só porque não havia contas atrasadas | Criar contas com vencimento anterior ao dia da execução. |
 | A busca e o filtro ficam num componente usado por todas as áreas | Um defeito pode aparecer só em uma área | Testar em "Minhas contas", em "Gastos da casa" e numa área criada. |
-| Incompatibilidade na exportação CSV | Usuário pode não conseguir utilizar o arquivo no Excel | Abrir o arquivo com duplo clique no Excel em português e conferir colunas e acentos. |
+| Incompatibilidade na exportação CSV | Usuário pode não conseguir utilizar o arquivo no Excel | Abrir o arquivo no Excel Online em português e conferir colunas e acentos. |
+| O Excel instalado não está disponível na máquina de teste | O Excel instalado pode se comportar diferente do Excel Online, e um defeito só dele passaria despercebido | Validar no Excel Online e registrar a limitação no caso de teste e no relatório final. |
 | Defeitos em funcionalidades compartilhadas | Podem afetar outras histórias | Executar a regressão da seção 3. |
 | Correções entregues próximo ao fim da sprint | Reduz o tempo disponível para reteste | Priorizar os bugs de maior severidade nos retestes. |
 | Ambiente de teste indisponível | Impede a execução dos testes | Comunicar o desenvolvedor e aguardar a normalização. |
