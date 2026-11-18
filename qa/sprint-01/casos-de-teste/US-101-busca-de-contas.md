@@ -109,12 +109,14 @@
 - Ao digitar 'agua' no campo "Buscar conta pelo nome", nenhuma conta é exibida.
 - Ao digitar 'condominio' no campo "Buscar conta pelo nome", nenhuma conta é exibida.
 
-**Situação:** Falhou.
+**Situação:** Falhou — ver [BUG-001](../bugs/BUG-001.md)
 
 **Evidência:**
 
 - [Busca por 'agua'](../evidencias/CT-101-03-agua.mp4)
 - [Busca por 'condominio'](../evidencias/CT-101-03-condominio.mp4)
+
+**Reteste:** Passou em 18/11, commit ae18502 — ver [BUG-001](../bugs/BUG-001.md)
 
 
 
